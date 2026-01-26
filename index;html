@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Darna Shop</title>
+  <meta name="description" content="صفحة طلب منتج - الدفع عند الاستلام" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo">DS</div>
+      <div>
+        <div class="brandName" id="brandName">Darna Shop</div>
+        <div class="brandSub" id="brandSub">الدفع عند الاستلام</div>
+      </div>
+    </div>
+
+    <div class="lang">
+      <button class="langBtn active" data-lang="ar">AR</button>
+      <button class="langBtn" data-lang="en">EN</button>
+      <button class="langBtn" data-lang="fr">FR</button>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="card product">
+      <div class="gallery">
+        <img id="productImage" alt="Product" />
+      </div>
+
+      <div class="productInfo">
+        <h1 id="productName">اسم المنتج (Placeholder)</h1>
+        <p class="muted" id="productDesc">وصف قصير للمنتج (يمكنك تغييره لاحقاً بسهولة)</p>
+
+        <div class="priceRow">
+          <div class="priceBox">
+            <div class="label" id="priceLabel">السعر</div>
+            <div class="price" id="productPrice">2400 دج</div>
+          </div>
+
+          <div class="priceBox">
+            <div class="label" id="deliveryLabel">التوصيل</div>
+            <div class="price small" id="deliveryHint">حسب الولاية</div>
+          </div>
+        </div>
+
+        <div class="badges">
+          <span class="badge" id="badgeCod">COD</span>
+          <span class="badge" id="badgeFast">تأكيد سريع</span>
+          <span class="badge" id="badge58">58 ولاية</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card formCard">
+      <h2 id="orderTitle">اطلب الآن</h2>
+
+      <form id="orderForm">
+        <div class="grid2">
+          <div class="field">
+            <label id="qtyLabel">الكمية *</label>
+            <select id="qty" required></select>
+          </div>
+
+          <div class="field" id="colorWrap">
+            <label id="colorLabel">اللون (اختياري)</label>
+            <select id="color"></select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label id="nameLabel">الاسم الكامل *</label>
+          <input id="fullName" type="text" required placeholder="مثال: سارة بلعترش" />
+        </div>
+
+        <div class="field">
+          <label id="phoneLabel">رقم الهاتف *</label>
+          <input id="phone" type="tel" required placeholder="مثال: 06xxxxxxxx" />
+        </div>
+
+        <div class="grid2">
+          <div class="field">
+            <label id="wilayaLabel">الولاية *</label>
+            <select id="wilaya" required></select>
+          </div>
+
+          <div class="field">
+            <label id="communeLabel">البلدية *</label>
+            <select id="commune" required></select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label id="deliveryTypeLabel">نوع التوصيل *</label>
+          <div class="radioRow">
+            <label class="radio">
+              <input type="radio" name="deliveryType" value="door" checked />
+              <span id="doorLabel">للمنزل</span>
+              <span class="radioPrice" id="doorPriceHint">(+800 دج)</span>
+            </label>
+            <label class="radio">
+              <input type="radio" name="deliveryType" value="desk" />
+              <span id="deskLabel">للمكتب</span>
+              <span class="radioPrice" id="deskPriceHint">(+500 دج)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="totalBox">
+          <div class="totalLine">
+            <span id="totalLabel">المجموع</span>
+            <strong id="totalPrice">0 دج</strong>
+          </div>
+          <div class="muted" id="totalNote">سيتم تأكيد الطلب عبر الاتصال</div>
+        </div>
+
+        <button type="submit" class="btn" id="submitBtn">تأكيد الطلب</button>
+
+        <p class="tiny muted" id="privacyNote">
+          بإرسال الطلب أنت توافق على أن يتم الاتصال بك لتأكيد الطلب.
+        </p>
+      </form>
+
+      <div id="success" class="success hidden">
+        <h3 id="successTitle">تم إرسال طلبك ✅</h3>
+        <p id="successText">شكراً لك! سنتصل بك قريباً لتأكيد الطلب.</p>
+        <button class="btn secondary" id="newOrderBtn">طلب جديد</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>© <span id="year"></span> <span id="footerBrand">Darna Shop</span></div>
+  </footer>
+
+  <script src="./config.js"></script>
+  <script src="./dz-communes.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
