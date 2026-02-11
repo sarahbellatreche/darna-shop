@@ -1,1 +1,0 @@
-# darna-shop
